@@ -45,8 +45,8 @@ DBConnect();
 
 app.use("/storage", express.static("storage"));
 app.get("/", (req, res) => {
-  app.use(express.static(__dirname, "client", "build"));
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  app.use(express.static(__dirname, "build"));
+  res.sendFile(path.resolve(__dirname, "build", "index.html"));
 });
 
 app.use(otpRouter);
