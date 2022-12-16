@@ -32,4 +32,12 @@ module.exports = {
       rooms,
     });
   }),
+
+  getRoom: catchError(async (req, res, next) => {
+    const room = await Room.findById(req.params.id);
+
+    res.status(200).json({
+      room,
+    });
+  }),
 };

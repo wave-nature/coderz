@@ -6,7 +6,7 @@ const {
   refreshTheToken,
   logout,
 } = require("./controllers/auth");
-const { createRoom, getRooms } = require("./controllers/rooms");
+const { createRoom, getRooms, getRoom } = require("./controllers/rooms");
 const _protected = require("./middlewares/protected");
 
 router.post("/api/send-otp", sendOtp);
@@ -16,5 +16,6 @@ router.get("/api/refresh", refreshTheToken);
 router.get("/api/logout", _protected, logout);
 router.post("/api/rooms", _protected, createRoom);
 router.get("/api/rooms", _protected, getRooms);
+router.get("/api/rooms/:id", _protected, getRoom);
 
 module.exports = router;

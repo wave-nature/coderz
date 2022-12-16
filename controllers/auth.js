@@ -38,8 +38,6 @@ module.exports = {
     const expires = Date.now() + ttl;
     const data = `${phone}.${otp}.${expires}`;
     const hash = hashOtp(data);
-    console.log("phone otp");
-    console.log(phone, otp);
 
     //send otp
     // try {
